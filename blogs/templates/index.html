@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>My Blog</h1>
+    <a href="/create/">Create New Post</a>
+    <hr>
+    {% for post in posts %}
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+      <a href="/edit/{{ post.id }}/">Edit</a>
+      <a href="/delete/{{ post.id }}/">Delete</a>
+      <hr>
+    {% empty %}
+      <p>No posts yet.</p>
+    {% endfor %}
+  </body>
+</html>

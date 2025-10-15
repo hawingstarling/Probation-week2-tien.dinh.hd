@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from blogs import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='home'),
+    path('create/', views.create, name='create_post'),
+    path('edit/<int:post_id>/', views.edit, name='edit_post'),
+    path('delete/<int:post_id>/', views.delete, name='delete_post'),
 ]
